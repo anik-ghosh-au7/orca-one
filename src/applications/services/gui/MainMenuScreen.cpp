@@ -10,13 +10,13 @@ using namespace Applications;
 
 MainMenuScreen::MainMenuScreen(std::shared_ptr<TFT_eSPI> tft) : MenuScreen(tft, false)
 {
-    // this->addItem(newAppsMainMenuItem());
-    // this->addItem(newWifiMainMenuItem());
-    // this->addItem(newBluetoothMainMenuItem());
-    // this->addItem(newSubGhzMainMenuItem());
-    // this->addItem(newNfcMainMenuItem());
+    this->addItem(newAppsMainMenuItem());
+    this->addItem(newWifiMainMenuItem());
+    this->addItem(newBluetoothMainMenuItem());
+    this->addItem(newSubGhzMainMenuItem());
+    this->addItem(newNfcMainMenuItem());
     this->addItem(newInfraredMainMenuItem());
-    // this->addItem(newBadUsbMainMenuItem());
+    this->addItem(newBadUsbMainMenuItem());
     this->addItem(newSettingsMainMenuItem());
 }
 
@@ -92,7 +92,7 @@ MenuItem MainMenuScreen::newSettingsMainMenuItem()
     currentSettings->setLanguage(Domain::Entities::Language::English);
 
     DeviceBase::getInstance()->saveSettings(); });
-    
+
     settingsLanguageSubMenuItem.addItem(settingsLanguageEnglishSubMenuItem);
 
     // Language - PortuguesBrazil
